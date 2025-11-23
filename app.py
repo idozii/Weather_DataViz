@@ -454,11 +454,16 @@ if show_comparison and len(current_data) > 1:
     comparison_df = comparison_df[['city', 'temp', 'feels_like', 'humidity', 'wind', 'pressure', 'description']]
     comparison_df.columns = ['City', 'Temp (°C)', 'Feels Like (°C)', 'Humidity (%)', 'Wind (m/s)', 'Pressure (hPa)', 'Weather']
     
-    # Style the dataframe
+    # Display the dataframe with formatting
     st.dataframe(
-        comparison_df.style.background_gradient(cmap='RdYlBu_r', subset=['Temp (°C)', 'Feels Like (°C)'])
-                          .background_gradient(cmap='Blues', subset=['Humidity (%)'])
-                          .format({'Temp (°C)': '{:.1f}', 'Feels Like (°C)': '{:.1f}', 'Wind (m/s)': '{:.1f}'}),
+        comparison_df.style.format({
+            'Temp (°C)': '{:.1f}', 
+            'Feels Like (°C)': '{:.1f}', 
+            'Wind (m/s)': '{:.1f}',
+            'Humidity (%)': '{:.0f}',
+            'Pressure (hPa)': '{:.0f}'
+        }).background_gradient(cmap='RdYlBu_r', subset=['Temp (°C)', 'Feels Like (°C)'])
+          .background_gradient(cmap='Blues', subset=['Humidity (%)']),
         use_container_width=True,
         hide_index=True
     )
