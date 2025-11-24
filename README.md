@@ -1,10 +1,7 @@
 # Weather Realtime Dashboard 🌤️
 
 A beautiful, real-time weather dashboard built with Streamlit that displays current weather conditions and historical data for multiple cities.
-
-## Link
-
-[text](https://weathertracking-idozii.streamlit.app/)
+[Link to the Website](https://weathertracking-idozii.streamlit.app/)
 
 ## Features
 
